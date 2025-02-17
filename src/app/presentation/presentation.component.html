@@ -1,0 +1,13 @@
+<div class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
+    <app-presentation-header></app-presentation-header>
+
+    <app-presentation-section [icon]="faPen" [sectionTitle]="'Présentation'"></app-presentation-section>
+
+    <app-presentation-section [icon]="faBriefcase" [sectionTitle]="'Expérience'"></app-presentation-section>
+    <app-presentation-experience *ngFor="let experience of displayedExperiences" [experience]="experience"></app-presentation-experience>
+
+    <app-presentation-section [icon]="faGraduationCap" [sectionTitle]="'Éducation & Formations'"></app-presentation-section>
+    <app-presentation-experience *ngFor="let education of displayedEducations" [experience]="education"></app-presentation-experience>
+
+    <app-presentation-section [icon]="faCode" [sectionTitle]="'Compétences'"></app-presentation-section>
+</div>

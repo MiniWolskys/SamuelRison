@@ -1,0 +1,8 @@
+button {
+    transition: color 0.3s ease-in-out;
+}
+
+button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

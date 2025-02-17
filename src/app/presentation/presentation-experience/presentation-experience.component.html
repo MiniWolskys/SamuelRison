@@ -1,0 +1,31 @@
+<div *ngIf="experience.company !== ''" class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white p-6 border-b border-gray-300 dark:border-gray-700">
+    <!-- Informations de base -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div>
+            <div class="flex flex-wrap items-center gap-2">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ experience.company}}</h4>
+                <span class="text-sm text-gray-600 dark:text-gray-400 italic">{{ experience.location }}</span>
+            </div>
+            <p class="text-md text-gray-600 dark:text-gray-300">{{ experience.title }}</p>
+            <p *ngIf="experience.startDate > 0 && experience.endDate > 0" class="text-sm text-gray-500 dark:text-gray-400">{{ experience.startDate | date: 'MM/yyyy' }} - {{ experience.endDate | date: 'MM/yyyy' }}</p>
+            <p *ngIf="experience.startDate === 0 && experience.endDate > 0" class="text-sm text-gray-500 dark:text-gray-400">{{ experience.endDate | date: 'MM/yyyy' }}</p>
+        </div>
+    </div>
+
+    <!-- Description courte -->
+    <p *ngIf="isCompact" class="mt-2 text-gray-700 dark:text-gray-300">{{ experience.shortDescription }}</p>
+
+    <!-- Détails supplémentaires -->
+    <div *ngIf="!isCompact" class="mt-4">
+        <p class="text-gray-700 dark:text-gray-300 mt-1">{{ experience.introduction }}</p>
+        <app-presentation-project *ngFor="let project of experience.projects" [project]="project"></app-presentation-project>
+    </div>
+
+    <!-- Liste des technologies utilisées -->
+    <div *ngIf="experience.technologies.length > 0" class="mt-2">
+        <h4 class="text-md font-semibold text-gray-900 dark:text-white">Technologies principales :</h4>
+        <ul class="flex flex-wrap gap-2 mt-1">
+            <li *ngFor="let tech of experience.technologies" (click)="filterToggle(tech)" class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1 rounded-full text-sm hover:cursor-pointer">{{ tech }}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div *ngIf="project.name !== ''" class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-4 rounded-lg border border-gray-300 dark:border-gray-700 mt-4">
+    <!-- Nom du projet -->
+    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ project.name }}</h4>
+
+    <!-- Présentation du projet -->
+    <p class="mt-2 text-gray-700 dark:text-gray-300">{{ project.introduction }}</p>
+
+    <!-- Liste des tâches réalisées -->
+    <div *ngIf="project.tasks.length > 0" class="mt-3">
+        <h5 class="text-md font-medium text-gray-900 dark:text-white">Tâches réalisées :</h5>
+        <ul *ngFor="let task of project.tasks" class="list-disc list-inside mt-1 text-gray-700 dark:text-gray-300">
+            <li>{{ task }}</li>
+        </ul>
+    </div>
+
+    <div class="mt-3 text-sm text-gray-600 dark:text-gray-400 italic">
+        <span class="font-medium text-gray-900 dark:text-white">Tech :</span><span *ngFor="let tech of project.technologies" (click)="filterToggle(tech)" class=" hover:cursor-pointer">&nbsp;{{ tech }}</span>
+    </div>
+</div>
