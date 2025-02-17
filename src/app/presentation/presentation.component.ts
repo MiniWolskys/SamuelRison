@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { PresentationHeaderComponent } from './header/presentation-header.component';
+import { PresentationHeaderComponent } from './presentation-header/presentation-header.component';
 import { PresentationExperienceComponent } from './presentation-experience/presentation-experience.component';
 import { Experience } from '../model/experience';
 import { getExperiences, getEducations } from '../data/experience-data';
