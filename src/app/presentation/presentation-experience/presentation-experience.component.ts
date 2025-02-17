@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { CompactViewService } from '../../service/compact-view.service';
 import { Subscription } from 'rxjs';
-import { DatePipe, NgForOf, NgIf } from '@angular/common';
+import { DatePipe, NgClass, NgForOf, NgIf } from '@angular/common';
 import { Experience } from '../../model/experience';
 import { PresentationProjectComponent } from '../presentation-project/presentation-project.component';
 import { ExperienceFilterService } from '../../service/experience-filter.service';
@@ -12,7 +12,8 @@ import { ExperienceFilterService } from '../../service/experience-filter.service
         NgIf,
         DatePipe,
         NgForOf,
-        PresentationProjectComponent
+        PresentationProjectComponent,
+        NgClass
     ],
     standalone: true,
     templateUrl: './presentation-experience.component.html',
@@ -24,12 +25,14 @@ export class PresentationExperienceComponent implements OnDestroy {
 
     public isCompact = true;
     private isCompactSubscription: Subscription;
+    public currentlyActiveFilters: string[] = [];
 
     constructor(private compactViewService: CompactViewService,
                 private experienceFilterService: ExperienceFilterService) {
         this.isCompactSubscription = compactViewService.isCompactObservable().subscribe((compact) => {
             this.isCompact = compact;
         });
+        this.experienceFilterService.filtersObservable().subscribe(filters => this.currentlyActiveFilters = filters);
     }
 
     public ngOnDestroy(): void {

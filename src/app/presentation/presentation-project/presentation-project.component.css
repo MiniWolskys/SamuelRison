@@ -1,0 +1,13 @@
+/* Mode clair - Filtre actif */
+.subtle-highlight {
+    color: #1e40af; /* Bleu foncé */
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Mode sombre - Filtre actif */
+.dark .subtle-highlight {
+    color: #93c5fd; /* Bleu clair */
+    text-decoration: underline;
+}

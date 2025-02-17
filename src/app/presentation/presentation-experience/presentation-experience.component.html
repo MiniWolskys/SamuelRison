@@ -25,7 +25,11 @@
     <div *ngIf="experience.technologies.length > 0" class="mt-2">
         <h4 class="text-md font-semibold text-gray-900 dark:text-white">Technologies principales :</h4>
         <ul class="flex flex-wrap gap-2 mt-1">
-            <li *ngFor="let tech of experience.technologies" (click)="filterToggle(tech)" class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1 rounded-full text-sm hover:cursor-pointer">{{ tech }}</li>
+            <li *ngFor="let tech of experience.technologies"
+                (click)="filterToggle(tech)"
+                [ngClass]="{'highlighted-filter': currentlyActiveFilters.includes(tech)}"
+                class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1 rounded-full text-sm hover:cursor-pointer"
+            >{{ tech }}</li>
         </ul>
     </div>
 </div>

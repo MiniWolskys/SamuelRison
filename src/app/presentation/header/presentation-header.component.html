@@ -8,14 +8,29 @@
         </div>
     </div>
 
-    <mat-icon>filter_alt</mat-icon>
-    <mat-select [formControl]="filter" multiple>
-        <mat-option *ngFor="let filter of availableFilters" [value]="filter">{{ filter }}</mat-option>
-    </mat-select>
-    <mat-icon *ngIf="selectedFilters.length > 0" (click)="removeAllFilters()">close</mat-icon>
-
     <!-- Toggle Vue Compacte -->
     <div class="mt-4 md:mt-0 flex items-center space-x-4">
+        <div class="flex items-center gap-3 ml-auto">
+            <button mat-icon-button [matMenuTriggerFor]="filterMenu">
+                <mat-icon class="text-gray-700 dark:text-gray-300">filter_alt</mat-icon>
+            </button>
+
+            <mat-menu #filterMenu="matMenu" class="bg-white dark:bg-gray-800">
+                <mat-selection-list [formControl]="filter">
+                    <mat-list-option *ngFor="let filter of availableFilters" [value]="filter">
+                        {{ filter }}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-menu>
+
+            <button mat-icon-button *ngIf="selectedFilters.length > 0" (click)="removeAllFilters()">
+                <mat-icon class="text-gray-700 dark:text-gray-300 hover:text-red-500">close</mat-icon>
+            </button>
+
+            <button mat-icon-button>
+                <mat-icon class="text-gray-700 dark:text-gray-300">download</mat-icon>
+            </button>
+        </div>
         <mat-slide-toggle [(ngModel)]="isCompact" (change)="changeCompactView()">
             <span class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vue compacte</span>
         </mat-slide-toggle>

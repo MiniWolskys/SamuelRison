@@ -3,11 +3,13 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompactViewService } from '../../service/compact-view.service';
 import { ExperienceFilterService } from '../../service/experience-filter.service';
-import { MatOption, MatSelect } from '@angular/material/select';
 import { NgForOf, NgIf } from '@angular/common';
 import { getEducations, getExperiences } from '../../data/experience-data';
 import { Subscription } from 'rxjs';
 import { MatIcon } from '@angular/material/icon';
+import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
+import { MatListOption, MatSelectionList } from '@angular/material/list';
+import { MatIconButton } from '@angular/material/button';
 
 @Component({
     selector: 'app-presentation-header',
@@ -15,11 +17,14 @@ import { MatIcon } from '@angular/material/icon';
         MatSlideToggle,
         FormsModule,
         ReactiveFormsModule,
-        MatSelect,
-        MatOption,
         NgForOf,
         MatIcon,
-        NgIf
+        NgIf,
+        MatMenu,
+        MatSelectionList,
+        MatListOption,
+        MatMenuTrigger,
+        MatIconButton
     ],
     standalone: true,
     templateUrl: './presentation-header.component.html',

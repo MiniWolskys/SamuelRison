@@ -1,0 +1,14 @@
+/* Style pour les filtres actifs */
+.highlighted-filter {
+    background-color: #bfdbfe; /* Bleu clair en mode clair */
+    color: #1e3a8a; /* Bleu foncé */
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* Mode sombre */
+.dark .highlighted-filter {
+    background-color: #2563eb; /* Bleu vif */
+    color: white;
+}

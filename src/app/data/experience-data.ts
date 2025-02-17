@@ -8,7 +8,7 @@ const experiences: ExperienceInterface[] = [
         startDate: 1639684410000,
         endDate: 1734378810000,
         shortDescription: 'Dans une équipe de 7 personnes, j’ai pris part à la conception, amélioration et maintenance de plusieurs applications web et mobiles. J’ai également apporté mes connaissances et compétences dans l’amélioration de l’équipe et des processus, via la pratique du clean code et la mise en place des processus de méthodologie agile. J’ai également encadré les nouveaux membres de l’équipe et mis en place un processus d’onboarding.',
-        technologies: ['Angular 18', 'Ionic', 'Electron', 'Java', 'TypeScript', 'Spring', 'Kotlin', 'REST API', 'PostgreSQL', 'Docker', 'Junit', 'Jest', 'Azure Devops', 'Github', 'Kubernetes', 'Swift', 'Swift UI', 'Kotlin', 'Kotlin Native', 'Pipeline', 'Dev & Ops', 'TDD', 'Clean Code', 'Methodologie Agile'],
+        technologies: ['Angular 18', 'Ionic', 'Electron', 'Java', 'TypeScript', 'Spring', 'REST API', 'PostgreSQL', 'Docker', 'Junit', 'Jest', 'Azure Devops', 'Github', 'Kubernetes', 'Swift', 'Swift UI', 'Kotlin', 'Kotlin Native', 'Pipeline', 'Dev & Ops', 'TDD', 'Clean Code', 'Methodologie Agile'],
         introduction: 'Au sein de l\'entreprise Sauermann, j\'ai participé à la conception, le développement et la maintenance de plusieurs applications à destination des utilisateurs et clients des produits Sauermann. Ceci a permis de booster les ventes des différents produits en simplifiant leur utilisation et en les rendant plus accessibles.',
         projects: [
             {
