@@ -8,6 +8,8 @@ import { faBriefcase, faCode, faGraduationCap, faPen } from '@fortawesome/free-s
 import { PresentationSectionComponent } from './presentation-section/presentation-section.component';
 import { ExperienceFilterService } from '../service/experience-filter.service';
 import { Subscription } from 'rxjs';
+import { PresentationIntroductionComponent } from './presentation-introduction/presentation-introduction.component';
+import { PresentationSkillsComponent } from './presentation-skills/presentation-skills.component';
 
 @Component({
     selector: 'app-presentation',
@@ -15,7 +17,9 @@ import { Subscription } from 'rxjs';
         PresentationHeaderComponent,
         PresentationExperienceComponent,
         NgForOf,
-        PresentationSectionComponent
+        PresentationSectionComponent,
+        PresentationIntroductionComponent,
+        PresentationSkillsComponent
     ],
     standalone: true,
     templateUrl: './presentation.component.html',

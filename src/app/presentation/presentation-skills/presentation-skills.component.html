@@ -1,0 +1,35 @@
+<div class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">Compétences Techniques</h2>
+
+    <div *ngFor="let category of technical_skills" class="mb-4">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-300 flex items-center gap-2">
+            <mat-icon class="text-gray-600 dark:text-gray-400">folder</mat-icon>
+            {{ category.name }}
+        </h3>
+        <ul class="flex flex-wrap gap-2 mt-2">
+            <li *ngFor="let skill of category.items"
+                [ngClass]="{'highlighted-filter': currentlyActiveFilters.includes(skill)}"
+                (click)="addToFilter(skill)"
+                class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1 rounded-full text-sm hover:cursor-pointer">
+                {{ skill }}
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-4 pt-4">Compétences complémentaires</h2>
+
+    <div *ngFor="let category of soft_skills" class="mb-4">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-gray-300 flex items-center gap-2">
+            <mat-icon class="text-gray-600 dark:text-gray-400">folder</mat-icon>
+            {{ category.name }}
+        </h3>
+        <ul class="flex flex-wrap gap-2 mt-2">
+            <li *ngFor="let skill of category.items"
+                [ngClass]="{'highlighted-filter': currentlyActiveFilters.includes(skill)}"
+                (click)="addToFilter(skill)"
+                class="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-1 rounded-full text-sm hover:cursor-pointer">
+                {{ skill }}
+            </li>
+        </ul>
+    </div>
+</div>
