@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { Project, ProjectService } from '../../service/project.service';
 
 @Component({
     selector: 'app-navbar',
@@ -24,9 +25,21 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
     public isMenuOpen = false;
+    public projectList: Project[];
     @ViewChild(MatMenuTrigger) projectMenuTrigger!: MatMenuTrigger;
+
+    constructor(projectService: ProjectService) {
+        this.projectList = projectService.getHighlightedProjects();
+    }
 
     public toggleMenu(): void {
         this.isMenuOpen = !this.isMenuOpen;
+
     }
+
+    public closeMenu(): void {
+        this.isMenuOpen = false;
+    }
+
+    protected readonly close = close;
 }

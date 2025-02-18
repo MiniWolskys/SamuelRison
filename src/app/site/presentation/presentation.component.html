@@ -1,15 +1,15 @@
 <div class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
     <app-presentation-header></app-presentation-header>
 
-    <app-presentation-section [icon]="faPen" [sectionTitle]="'Présentation'"></app-presentation-section>
+    <app-site-section [icon]="faPen" [sectionTitle]="'Présentation'"></app-site-section>
     <app-presentation-introduction></app-presentation-introduction>
 
-    <app-presentation-section [icon]="faBriefcase" [sectionTitle]="'Expérience'"></app-presentation-section>
+    <app-site-section [icon]="faBriefcase" [sectionTitle]="'Expérience'"></app-site-section>
     <app-presentation-experience *ngFor="let experience of displayedExperiences" [experience]="experience"></app-presentation-experience>
 
-    <app-presentation-section [icon]="faGraduationCap" [sectionTitle]="'Éducation & Formations'"></app-presentation-section>
+    <app-site-section [icon]="faGraduationCap" [sectionTitle]="'Éducation & Formations'"></app-site-section>
     <app-presentation-experience *ngFor="let education of displayedEducations" [experience]="education"></app-presentation-experience>
 
-    <app-presentation-section [icon]="faCode" [sectionTitle]="'Compétences'"></app-presentation-section>
+    <app-site-section [icon]="faCode" [sectionTitle]="'Compétences'"></app-site-section>
     <app-presentation-skills></app-presentation-skills>
 </div>

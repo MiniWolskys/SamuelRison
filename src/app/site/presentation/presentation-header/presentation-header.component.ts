@@ -1,10 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CompactViewService } from '../../service/compact-view.service';
-import { ExperienceFilterService } from '../../service/experience-filter.service';
+import { CompactViewService } from '../../../service/compact-view.service';
+import { ExperienceFilterService } from '../../../service/experience-filter.service';
 import { NgForOf, NgIf } from '@angular/common';
-import { getEducations, getExperiences } from '../../data/experience-data';
+import { getEducations, getExperiences } from '../../../data/experience-data';
 import { Subscription } from 'rxjs';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';

@@ -3,16 +3,16 @@ import { FaIconComponent, IconDefinition } from '@fortawesome/angular-fontawesom
 import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-presentation-section',
+    selector: 'app-site-section',
     imports: [
         FaIconComponent,
         NgIf
     ],
     standalone: true,
-    templateUrl: './presentation-section.component.html',
+    templateUrl: './site-section.component.html',
     styleUrl: './presentation-section.component.css'
 })
-export class PresentationSectionComponent {
+export class SiteSectionComponent {
     @Input({required: true})
     public icon: IconDefinition | undefined;
     @Input({required: true})

@@ -1,4 +1,4 @@
-import { Project } from './project';
+import { WorkProject } from './workProject';
 
 export interface ExperienceInterface {
     company: string;
@@ -8,12 +8,12 @@ export interface ExperienceInterface {
     endDate: number;
     shortDescription: string;
     introduction: string;
-    projects: Project[];
+    projects: WorkProject[];
     technologies: string[];
 }
 
 export class Experience implements ExperienceInterface {
-    public projects: Project[];
+    public projects: WorkProject[];
     constructor(public company: string = '',
                 public title: string = '',
                 public location: string = '',
@@ -21,7 +21,7 @@ export class Experience implements ExperienceInterface {
                 public endDate: number = 0,
                 public shortDescription: string = '',
                 public introduction: string = '',
-                private allProjects: Project[] = [],
+                private allProjects: WorkProject[] = [],
                 public technologies: string[] = []) {
         this.projects = this.allProjects;
     }

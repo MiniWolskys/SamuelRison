@@ -1,12 +1,12 @@
 import { Component, OnDestroy } from '@angular/core';
 import { PresentationHeaderComponent } from './presentation-header/presentation-header.component';
 import { PresentationExperienceComponent } from './presentation-experience/presentation-experience.component';
-import { Experience } from '../model/experience';
-import { getExperiences, getEducations } from '../data/experience-data';
+import { Experience } from '../../model/work_experience/experience';
+import { getExperiences, getEducations } from '../../data/experience-data';
 import { NgForOf } from '@angular/common';
 import { faBriefcase, faCode, faGraduationCap, faPen } from '@fortawesome/free-solid-svg-icons';
-import { PresentationSectionComponent } from './presentation-section/presentation-section.component';
-import { ExperienceFilterService } from '../service/experience-filter.service';
+import { SiteSectionComponent } from '../site-section/site-section.component';
+import { ExperienceFilterService } from '../../service/experience-filter.service';
 import { Subscription } from 'rxjs';
 import { PresentationIntroductionComponent } from './presentation-introduction/presentation-introduction.component';
 import { PresentationSkillsComponent } from './presentation-skills/presentation-skills.component';
@@ -17,7 +17,7 @@ import { PresentationSkillsComponent } from './presentation-skills/presentation-
         PresentationHeaderComponent,
         PresentationExperienceComponent,
         NgForOf,
-        PresentationSectionComponent,
+        SiteSectionComponent,
         PresentationIntroductionComponent,
         PresentationSkillsComponent
     ],

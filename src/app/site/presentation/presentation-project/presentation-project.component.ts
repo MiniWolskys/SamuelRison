@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { createEmptyProject, Project } from '../../model/project';
+import { createEmptyProject, WorkProject } from '../../../model/work_experience/workProject';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
-import { ExperienceFilterService } from '../../service/experience-filter.service';
+import { ExperienceFilterService } from '../../../service/experience-filter.service';
 
 @Component({
     selector: 'app-presentation-project',
@@ -16,7 +16,7 @@ import { ExperienceFilterService } from '../../service/experience-filter.service
 })
 export class PresentationProjectComponent {
     @Input({required: true})
-    public project: Project = createEmptyProject();
+    public project: WorkProject = createEmptyProject();
 
     public currentlyActiveFilters: string[] = [];
 

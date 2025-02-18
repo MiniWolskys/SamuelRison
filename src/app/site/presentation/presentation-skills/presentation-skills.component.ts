@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { NgClass, NgForOf } from '@angular/common';
-import { ExperienceFilterService } from '../../service/experience-filter.service';
+import { ExperienceFilterService } from '../../../service/experience-filter.service';
 import { Subscription } from 'rxjs';
 
 interface Skills {

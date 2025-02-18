@@ -1,6 +1,6 @@
 <header class="shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
-        <button class="text-2xl font-semibold hover:cursor-pointer" [routerLink]="'/'">Samuel</button>
+        <button (click)="closeMenu()" class="text-2xl font-semibold hover:cursor-pointer" [routerLink]="'/'">Samuel</button>
 
         <!-- Menu Desktop -->
         <nav class="hidden md:flex space-x-6">
@@ -9,9 +9,8 @@
                 <mat-icon>arrow_drop_down</mat-icon>
             </button>
             <mat-menu #projects="matMenu">
-                <button mat-menu-item>Project 1</button>
-                <button mat-menu-item>Project 2</button>
-                <button mat-menu-item>Project 3</button>
+                <button mat-menu-item [routerLink]="'/project'">Tout les projets</button>
+                <button mat-menu-item *ngFor="let project of projectList">{{ project.title }}</button>
             </mat-menu>
             <button target="_blank" class="hover:text-blue-400 hover:cursor-pointer transition px-4" [routerLink]="'/contact'">Contact</button>
         </nav>
@@ -26,7 +25,7 @@
 
     <!-- Menu Mobile -->
     <div *ngIf="isMenuOpen" class="md:hidden bg-gray-800 p-4 space-y-2">
-        <button class="block text-white hover:text-blue-400">Projets</button>
-        <button class="block text-white hover:text-blue-400" [routerLink]="'/contact'">Contacts</button>
+        <button (click)="closeMenu()" class="block text-white hover:text-blue-400" [routerLink]="'/project'">Projets</button>
+        <button (click)="closeMenu()" class="block text-white hover:text-blue-400" [routerLink]="'/contact'">Contacts</button>
     </div>
 </header>

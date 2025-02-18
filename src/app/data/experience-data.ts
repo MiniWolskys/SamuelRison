@@ -1,4 +1,4 @@
-import { Experience, ExperienceInterface } from '../model/experience';
+import { Experience, ExperienceInterface } from '../model/work_experience/experience';
 
 const experiences: ExperienceInterface[] = [
     {

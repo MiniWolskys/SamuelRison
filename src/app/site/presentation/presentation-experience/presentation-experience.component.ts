@@ -1,10 +1,10 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { CompactViewService } from '../../service/compact-view.service';
+import { CompactViewService } from '../../../service/compact-view.service';
 import { Subscription } from 'rxjs';
 import { DatePipe, NgClass, NgForOf, NgIf } from '@angular/common';
-import { Experience } from '../../model/experience';
+import { Experience } from '../../../model/work_experience/experience';
 import { PresentationProjectComponent } from '../presentation-project/presentation-project.component';
-import { ExperienceFilterService } from '../../service/experience-filter.service';
+import { ExperienceFilterService } from '../../../service/experience-filter.service';
 
 @Component({
     selector: 'app-presentation-experience',
