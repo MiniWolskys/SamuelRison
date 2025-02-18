@@ -1,0 +1,51 @@
+<!-- Bandeau Contact -->
+<div class="flex items-center gap-3 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg mt-6 relative">
+    <fa-icon [icon]="faPhone"></fa-icon>
+    <h3 class="text-xl font-semibold">Contact</h3>
+    <div class="flex-grow border-t border-gray-400 dark:border-gray-600 ml-4"></div>
+</div>
+
+<!-- Introduction -->
+<p class="mt-4 text-gray-700 dark:text-gray-300">
+    N'hésitez pas à me contacter via les moyens suivants ou en remplissant le formulaire ci-dessous.
+</p>
+
+<!-- Informations de contact -->
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Email -->
+    <div class="flex items-center gap-3">
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+        <span class="text-gray-900 dark:text-white">Email : <a href="mailto:samuelrison@yahoo.fr" class="text-blue-600 dark:text-blue-400 hover:underline">samuelrison&#64;yahoo.fr</a></span>
+    </div>
+
+    <!-- Téléphone -->
+    <div class="flex items-center gap-3">
+        <fa-icon [icon]="faPhone"></fa-icon>
+        <span class="text-gray-900 dark:text-white">Téléphone : <a href="tel:+33 7 87 06 69 88" class="text-blue-600 dark:text-blue-400 hover:underline">+33 7 87 06 69 88</a></span>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="flex items-center gap-3">
+        <fa-icon [icon]="faLinkedin"></fa-icon>
+        <span class="text-gray-900 dark:text-white">LinkedIn : <a href="https://linkedin.com/in/samuel-rison/" class="text-blue-600 dark:text-blue-400 hover:underline">linkedin.com/in/samuel-rison/</a></span>
+    </div>
+
+    <!-- GitHub -->
+    <div class="flex items-center gap-3">
+        <fa-icon [icon]="faGithub"></fa-icon>
+        <span class="text-gray-900 dark:text-white">GitHub : <a href="https://github.com/miniwolskys" class="text-blue-600 dark:text-blue-400 hover:underline">github.com/miniwolskys</a></span>
+    </div>
+</div>
+
+<!-- Formulaire de contact -->
+<div class="mt-8 bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border border-gray-300 dark:border-gray-700">
+    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">Envoyer un message</h4>
+
+    <form class="mt-4 flex flex-col gap-4" (ngSubmit)="submitForm()">
+        <input [(ngModel)]="username" required type="text" name="name" placeholder="Votre nom" class="w-full p-2 border rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600">
+        <input [(ngModel)]="userEmail" required type="email" name="email" placeholder="Votre email" class="w-full p-2 border rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600">
+        <textarea [(ngModel)]="userMessage" required name="message" rows="4" placeholder="Votre message" class="w-full p-2 border rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600"></textarea>
+
+        <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Envoyer</button>
+    </form>
+</div>

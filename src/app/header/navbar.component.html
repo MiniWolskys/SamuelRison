@@ -1,6 +1,6 @@
 <header class="shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
-        <button class="text-2xl font-semibold hover:cursor-pointer">Samuel</button>
+        <button class="text-2xl font-semibold hover:cursor-pointer" [routerLink]="'/'">Samuel</button>
 
         <!-- Menu Desktop -->
         <nav class="hidden md:flex space-x-6">
@@ -13,7 +13,7 @@
                 <button mat-menu-item>Project 2</button>
                 <button mat-menu-item>Project 3</button>
             </mat-menu>
-            <button target="_blank" class="hover:text-blue-400 hover:cursor-pointer transition px-4">Contact</button>
+            <button target="_blank" class="hover:text-blue-400 hover:cursor-pointer transition px-4" [routerLink]="'/contact'">Contact</button>
         </nav>
 
         <!-- Bouton menu mobile -->
@@ -27,6 +27,6 @@
     <!-- Menu Mobile -->
     <div *ngIf="isMenuOpen" class="md:hidden bg-gray-800 p-4 space-y-2">
         <button class="block text-white hover:text-blue-400">Projets</button>
-        <button class="block text-white hover:text-blue-400">Contacts</button>
+        <button class="block text-white hover:text-blue-400" [routerLink]="'/contact'">Contacts</button>
     </div>
 </header>
