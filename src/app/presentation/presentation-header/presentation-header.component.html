@@ -11,8 +11,8 @@
     <!-- Toggle Vue Compacte -->
     <div class="mt-4 md:mt-0 flex items-center space-x-4">
         <div class="flex items-center gap-3 ml-auto px-4">
-            <button mat-icon-button [matMenuTriggerFor]="filterMenu">
-                <mat-icon class="text-gray-700 dark:text-gray-300">filter_alt</mat-icon>
+            <button class="rounded-full hover:bg-gray-200 hover:dark:bg-gray-900 p-2" [matMenuTriggerFor]="filterMenu">
+                <mat-icon>filter_alt</mat-icon>
             </button>
 
             <mat-menu #filterMenu="matMenu" class="bg-white dark:bg-gray-800">
@@ -23,13 +23,13 @@
                 </mat-selection-list>
             </mat-menu>
 
-            <button mat-icon-button *ngIf="selectedFilters.length > 0" (click)="removeAllFilters()">
+            <button *ngIf="selectedFilters.length > 0" (click)="removeAllFilters()" class="rounded-full hover:bg-gray-200 hover:dark:bg-gray-900 p-2">
                 <mat-icon class="text-gray-700 dark:text-gray-300 hover:text-red-500">close</mat-icon>
             </button>
 
-            <button mat-icon-button>
+            <a *ngIf="filenameToDownload !== ''" [download]="filenameToDownload" [href]="fileToDownload" class="rounded-full hover:bg-gray-200 hover:dark:bg-gray-900 p-2">
                 <mat-icon class="text-gray-700 dark:text-gray-300">download</mat-icon>
-            </button>
+            </a>
         </div>
         <mat-slide-toggle [(ngModel)]="isCompact" (change)="changeCompactView()">
             <span class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vue compacte</span>

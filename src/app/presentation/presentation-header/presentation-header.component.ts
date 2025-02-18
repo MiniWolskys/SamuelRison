@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { MatListOption, MatSelectionList } from '@angular/material/list';
-import { MatIconButton } from '@angular/material/button';
 
 @Component({
     selector: 'app-presentation-header',
@@ -24,7 +23,6 @@ import { MatIconButton } from '@angular/material/button';
         MatSelectionList,
         MatListOption,
         MatMenuTrigger,
-        MatIconButton
     ],
     standalone: true,
     templateUrl: './presentation-header.component.html',
@@ -37,11 +35,16 @@ export class PresentationHeaderComponent implements OnDestroy {
     private filterValueChangeSubscription: Subscription;
     public selectedFilters: string[] = [];
     private filtersSecondaryEditToggle: Subscription;
+    public fileToDownload = '';
+    public filenameToDownload = '';
+    private resume = 'assets/CV Samuel RISON.pdf';
+    private technicalDocument = 'assets/Dossier de compétences - Samuel Rison.pdf';
 
     constructor(
         private compactViewService: CompactViewService,
         experienceFilterService: ExperienceFilterService,
     ) {
+        this.checkWhatFileToDownload();
         getExperiences().map(experience => {
             experience.technologies.map(tech => this.availableFilters.add(tech));
             experience.projects.map(project => project.technologies.map(tech => this.availableFilters.add(tech)));
@@ -61,6 +64,7 @@ export class PresentationHeaderComponent implements OnDestroy {
 
     public changeCompactView(): void {
         this.compactViewService.setCompact(this.isCompact);
+        this.checkWhatFileToDownload();
     }
 
     public ngOnDestroy(): void {
@@ -70,5 +74,10 @@ export class PresentationHeaderComponent implements OnDestroy {
 
     public removeAllFilters() {
         this.filter.setValue([]);
+    }
+
+    private checkWhatFileToDownload() {
+        this.filenameToDownload = this.isCompact ? 'CV Samuel Rison.pdf' : 'Dossier de compétences - Samuel Rison.pdf';
+        this.fileToDownload = this.isCompact ? this.resume : this.technicalDocument;
     }
 }
