@@ -4,4 +4,5 @@ export interface ProjectInterface {
     image: string;
     description: string;
     highlight: boolean;
+    code_url: string;
 }
