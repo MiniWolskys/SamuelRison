@@ -1,8 +1,10 @@
 <!-- Bandeau Nom du Projet -->
 <div class="flex items-center justify-center gap-3 bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg mt-6 relative">
-    <h3 class="text-xl font-semibold">{{ project?.title }}</h3>
-    <a [href]="project?.code_url" target="_blank">
-        <fa-icon [icon]="faGithub"></fa-icon>
+    <div class="flex items-center gap-3">
+        <h3 class="text-xl font-semibold">{{ project?.title }}</h3>
+    </div>
+    <a [href]="project?.code_url" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
+        <fa-icon [icon]="faGithub" class="text-2xl"></fa-icon>
     </a>
 </div>
 
@@ -12,5 +14,12 @@
 </div>
 
 <!-- Contenu du projet (README) -->
-<div class="mt-6 text-gray-800 dark:text-gray-200" [innerHTML]="project?.htmlDescription">
+<div class="mt-6 text-gray-800 dark:text-gray-200">
+    <h4 class="text-lg font-semibold flex items-center gap-2">
+        <span>Description du projet</span>
+        <a [href]="project?.code_url" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition text-sm flex items-center gap-1">
+            <fa-icon [icon]="faGithub"></fa-icon> Voir le code
+        </a>
+    </h4>
+    <p [innerHTML]="project?.htmlDescription"></p>
 </div>
