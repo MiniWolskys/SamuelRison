@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Project, ProjectService } from '../../../service/project.service';
 import { ActivatedRoute } from '@angular/router';
-import { checkDefined } from '../../../helper/type';
+import { checkDefined } from '../../../helper/type.helper';
 import { Subscription } from 'rxjs';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';

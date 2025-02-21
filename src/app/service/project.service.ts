@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { projects_data } from '../data/project-data';
 import { ProjectInterface } from '../model/projectInterface';
-import { checkDefined } from '../helper/type';
+import { checkDefined } from '../helper/type.helper';
 
 export class Project implements ProjectInterface {
     constructor(
