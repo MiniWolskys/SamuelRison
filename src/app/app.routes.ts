@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { PresentationComponent } from './site/presentation/presentation.component';
 import { ContactPageComponent } from './site/contact-page/contact-page.component';
 import { ProjectsComponent } from './site/projects/projects.component';
+import { ProjectComponent } from './site/projects/project/project.component';
 
 export const routes: Routes = [
     { path: '', component: PresentationComponent },
     { path: 'contact', component: ContactPageComponent },
-    { path: 'project', component: ProjectsComponent },
+    { path: 'projects', component: ProjectsComponent },
+    { path: 'project/:id', component: ProjectComponent }
 ];
 
 @NgModule({

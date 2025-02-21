@@ -2,7 +2,7 @@ export interface ProjectInterface {
     id: number;
     title: string;
     image: string;
-    description: string;
+    htmlDescription: string;
     highlight: boolean;
     code_url: string;
 }

@@ -9,8 +9,8 @@
                 <mat-icon>arrow_drop_down</mat-icon>
             </button>
             <mat-menu #projects="matMenu">
-                <button mat-menu-item [routerLink]="'/project'">Tout les projets</button>
-                <button mat-menu-item *ngFor="let project of projectList">{{ project.title }}</button>
+                <button mat-menu-item [routerLink]="'/projects'">Tout les projets</button>
+                <button mat-menu-item [routerLink]="'/project/' + project.id" *ngFor="let project of projectList">{{ project.title }}</button>
             </mat-menu>
             <button target="_blank" class="hover:text-blue-400 hover:cursor-pointer transition px-4" [routerLink]="'/contact'">Contact</button>
         </nav>
