@@ -37,9 +37,5 @@ export class NavbarComponent {
 
     }
 
-    public closeMenu(): void {
-        this.isMenuOpen = false;
-    }
-
     protected readonly close = close;
 }

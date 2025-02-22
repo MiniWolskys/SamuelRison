@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { createEmptyProject, WorkProject } from '../../../model/work_experience/workProject';
+import { createEmptyProject, type WorkProject } from '../../../model/work_experience/workProject';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { ExperienceFilterService } from '../../../service/experience-filter.service';
 
