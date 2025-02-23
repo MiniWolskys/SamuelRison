@@ -47,7 +47,7 @@ export class PresentationSkillsComponent implements OnDestroy {
     }
 
     public addToFilter(skill: string): void {
-        this.experienceFilterService.addFilter(skill);
+        this.experienceFilterService.toggleFilter(skill);
 
     }
 }

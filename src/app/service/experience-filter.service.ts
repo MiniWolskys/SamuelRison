@@ -13,7 +13,7 @@ export class ExperienceFilterService {
         this.filters = filters;
         this.filters$.next(this.filters);
     }
-    
+
     public filtersObservable(): Observable<string[]> {
         return this.filters$.asObservable();
     }
@@ -22,7 +22,7 @@ export class ExperienceFilterService {
         return this.filtersSecondaryEdit$.asObservable();
     }
 
-    public addFilter(newFilter: string): void {
+    public toggleFilter(newFilter: string): void {
         if (this.filters.includes(newFilter)) {
             this.filters = this.filters.filter(filter => filter !== newFilter);
         } else {

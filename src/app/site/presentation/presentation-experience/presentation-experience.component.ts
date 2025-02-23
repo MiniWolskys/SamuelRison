@@ -40,6 +40,6 @@ export class PresentationExperienceComponent implements OnDestroy {
     }
 
     public filterToggle(tech: string): void {
-        this.experienceFilterService.addFilter(tech);
+        this.experienceFilterService.toggleFilter(tech);
     }
 }

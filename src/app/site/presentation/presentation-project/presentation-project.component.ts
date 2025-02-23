@@ -25,6 +25,6 @@ export class PresentationProjectComponent {
     }
 
     public filterToggle(tech: string): void {
-        this.experienceFilterService.addFilter(tech);
+        this.experienceFilterService.toggleFilter(tech);
     }
 }
