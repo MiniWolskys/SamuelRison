@@ -6,7 +6,7 @@ import { NgForOf } from '@angular/common';
 import { Project, ProjectService } from '../../service/project.service';
 
 @Component({
-    selector: 'app-projetcs',
+    selector: 'app-projects',
     imports: [
         RouterLink,
         SiteSectionComponent,
@@ -14,7 +14,7 @@ import { Project, ProjectService } from '../../service/project.service';
     ],
     standalone: true,
     templateUrl: './projects.component.html',
-    styleUrl: './projetcs.component.css'
+    styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
     public projects: Project[] = [];

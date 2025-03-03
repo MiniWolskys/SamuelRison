@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { CompactViewService } from './compact-view.service';
+import { firstValueFrom } from 'rxjs';
 
 describe('CompactViewService', () => {
     let service: CompactViewService;
@@ -14,9 +15,12 @@ describe('CompactViewService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should have initial value of true', () => {
-        service.isCompactObservable().subscribe(value => {
-            expect(value).toEqual(true);
-        });
+    it('should have initial value of true', async () => {
+        expect(await firstValueFrom(service.isCompactObservable())).toEqual(true);
+    });
+
+    it('setCompact should change value given by observable', async () => {
+        service.setCompact(false);
+        expect(await firstValueFrom(service.isCompactObservable())).toEqual(false);
     });
 });
