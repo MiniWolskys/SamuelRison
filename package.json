@@ -4,8 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build:darwin:linux": "ng build --output-path docs --base-href /SamuelRison/ && cp -R ./docs/browser/* ./docs && rm -rf ./docs/browser",
-        "build:win32": "ng build --output-path docs --base-href /SamuelRison/ && xcopy /e /h .\\docs\\browser\\* .\\docs\\ && rmdir /s /q .\\docs\\browser",
+        "build:darwin:linux": "ng build --base-href /SamuelRison/ && cp -R ./dist/samuel-rison-website/browser/* ./dist/samuel-rison-website && rm -rf ./dist/samuel-rison-website/browser",
+        "build:win32": "ng build --base-href /SamuelRison/ && xcopy /e /h .\\dist\\samuel-rison-website\\browser\\* .\\dist\\samuel-rison-website\\ && rmdir /s /q .\\dist\\samuel-rison-website\\browser",
         "watch": "ng build --watch --configuration development",
         "test": "jest"
     },
